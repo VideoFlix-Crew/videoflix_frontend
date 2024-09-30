@@ -21,8 +21,10 @@
             </div>
             <div class="input-container">
                 <input [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Password"
-                    formControlName="password"><img src="assets/img/icons/password_visibility.svg" alt="eye"
-                    (click)="togglePasswordVisibility()">
+                    formControlName="password">
+                    <app-eye-icon (click)="togglePasswordVisibility()"></app-eye-icon>
+                    <!-- <img src="assets/img/icons/password_visibility.svg" alt="eye"
+                    (click)="togglePasswordVisibility()"> -->
                 @if (loginForm.controls['password'].touched && loginForm.controls['password'].invalid) {
                 <div class="error-message">
                     @if (loginForm.controls['password'].errors?.['required']) {

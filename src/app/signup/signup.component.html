@@ -21,8 +21,10 @@
             </div>
             <div class="input-container">
                 <input [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Enter a Password"
-                    formControlName="password"><img src="assets/img/icons/password_visibility.svg" alt="eye"
-                    (click)="togglePasswordVisibility()">
+                    formControlName="password">
+                    <app-eye-icon (click)="togglePasswordVisibility()"></app-eye-icon>
+                    <!-- <img src="assets/img/icons/password_visibility.svg" alt="eye"
+                    (click)="togglePasswordVisibility()"> -->
                 @if (signupForm.controls['password'].touched && signupForm.controls['password'].invalid) {
                 <div class="error-message">
                     @if (signupForm.controls['password'].errors?.['required']) {
@@ -37,14 +39,15 @@
             </div>
             <div class="input-container">
                 <input [type]="isConfirmPasswordVisible ? 'text' : 'password'" placeholder="Confirm Password"
-                    formControlName="confirmPassword"><img src="assets/img/icons/password_visibility.svg" alt="eye"
-                    (click)="toggleConfirmPasswordVisibility()">
+                    formControlName="confirmPassword">
+                    <app-eye-icon (click)="toggleConfirmPasswordVisibility()"></app-eye-icon>
+                    <!-- <img src="assets/img/icons/password_visibility.svg" alt="eye"
+                    (click)="toggleConfirmPasswordVisibility()"> -->
                 @if (signupForm.controls['password'].touched && signupForm.controls['confirmPassword'].invalid) {
                 <div class="error-message">
                     @if (signupForm.controls['confirmPassword'].value !== signupForm.controls['password'].value) {
                     <p>Passwords must match!</p>
                     }
-
                 </div>
                 }
             </div>

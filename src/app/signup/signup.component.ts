@@ -9,11 +9,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { EmailService } from '../services/email.service';
+import { EyeIconComponent } from '../shared/eye-icon/eye-icon.component';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, HeaderComponent, FooterComponent, RouterLink],
+  imports: [ReactiveFormsModule, HeaderComponent, FooterComponent, RouterLink ,EyeIconComponent],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })

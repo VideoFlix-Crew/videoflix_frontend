@@ -3,11 +3,12 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { PlayIconComponent } from "../shared/play-icon/play-icon.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, CommonModule, RouterLink],
+  imports: [HeaderComponent, FooterComponent, CommonModule, RouterLink, PlayIconComponent, PlayIconComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
