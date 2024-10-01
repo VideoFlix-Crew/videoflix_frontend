@@ -66,3 +66,32 @@ input::placeholder {
 p {
     @include DMSans(500, 18px, 23.44px, $black);
 }
+
+
+@media screen and (max-width: $responsive-breakpoint) {
+    .signup-container {
+        max-width: 320px;
+        height: 466px;
+        padding: 43px 24px;
+        gap: 32px;
+
+        h1 {
+            @include DMSans(700, 40px, 52.08px, $main-blue-dark);
+        }
+    }
+
+    form {
+        @include dFlex(column, center, center);
+        width: 310px;
+        height: 159px;
+        gap: 16px;
+    }
+
+    input {
+        width: 310px;
+    }
+
+    input::placeholder {
+        @include DMSans(400, 16px, 20.83px, $main-blue-dark);
+    }
+}

@@ -18,12 +18,17 @@
 
   h1 {
     @include DMSans(700, 48px, 40.5px, $white);
+    text-align: center;
   }
+
   h2 {
     @include DMSans(300, 24px, 40.5px, $white);
+    text-align: center;
   }
+
   h3 {
     @include DMSans(200, 16px, 40.5px, $white);
+    text-align: center;
   }
 }
 
@@ -32,7 +37,7 @@
 }
 
 form {
-  @include dFlex(block, block, block);
+  @include dFlex(column, center, center);
   height: 167px;
   gap: 16px;
 
@@ -55,6 +60,7 @@ form {
     @include buttonBlue(151px, 48px, 10px);
     @include dFlex(row, center, center);
     border-radius: 50px;
+
     &:active {
       @include btnActive($main-blue-dark);
     }
@@ -76,4 +82,40 @@ input::placeholder {
 
 p {
   @include DMSans(500, 18px, 23.44px, $black);
+}
+
+
+@media screen and (max-width: $responsive-breakpoint) {
+  .landing-container {
+    height: 384px;
+    padding: 43px 24px;
+    gap: 32px;
+
+    h1 {
+      @include DMSans(700, 40px, 40px, $white);
+    }
+
+    h2 {
+      @include DMSans(500, 20px, 26.04px, $white);
+    }
+
+    h3 {
+      @include DMSans(400, 16px, 20.83px, $white);
+    }
+  }
+
+  form {
+    @include dFlex(column, center, center);
+    width: 310px;
+    height: 159px;
+    gap: 16px;
+  }
+
+  input {
+    width: 310px !important;
+  }
+
+  input::placeholder {
+    @include DMSans(400, 16px, 20.83px, $white);
+  }
 }

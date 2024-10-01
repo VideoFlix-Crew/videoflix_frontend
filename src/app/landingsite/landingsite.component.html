@@ -8,24 +8,15 @@
     <h2>Watch whenever you want wherever you want</h2>
     <h3>Enter your email to create or restart your subscription</h3>
     <form (ngSubmit)="emailToService(email)">
-      <input
-        type="text"
-        placeholder="Email Address"
-        [(ngModel)]="email"
-        name="emailfield"
-        required
-        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-        minlength="8"
-        #emailfield="ngModel"
-        [ngStyle]="{
+      <input type="text" placeholder="Email Address" [(ngModel)]="email" name="emailfield" required
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" minlength="8" #emailfield="ngModel" [ngStyle]="{
           'border-color':
             !emailfield.valid && (emailfield.touched || emailfield.dirty)
               ? 'red'
               : emailfield.valid && (emailfield.touched || emailfield.dirty)
               ? 'green'
               : '#fff'
-        }"
-      />
+        }" />
       <button type="submit" [disabled]="!emailfield.valid">
         Sign Up <img src="assets/img/icons/chevron_right.svg" alt="" />
       </button>
