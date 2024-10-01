@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { EyeIconComponent } from "../shared/eye-icon/eye-icon.component";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     RouterLink,
     ReactiveFormsModule,
-  ],
+    EyeIconComponent
+],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

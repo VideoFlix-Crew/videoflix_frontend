@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { FormGroup } from '@angular/forms';
+import { ArrowIconComponent } from '../shared/arrow-icon/arrow-icon.component';
 
 @Component({
   selector: 'app-landingsite',
@@ -18,6 +19,7 @@ import { FormGroup } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ArrowIconComponent
   ],
   templateUrl: './landingsite.component.html',
   styleUrl: './landingsite.component.scss',

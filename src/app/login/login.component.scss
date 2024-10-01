@@ -76,14 +76,25 @@ form {
 
 }
 
-input {
+.input-container {
     width: 408px;
     height: 48px;
     border-radius: 12px;
     padding: 12px 24px;
     box-sizing: border-box;
     border: solid 1px $main-blue-dark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
     cursor: pointer;
+    input {
+        width: 408px;
+        height: 48px;
+        border:none;
+        background-color: transparent;
+        cursor: pointer;
+    };
 }
 
 
