@@ -1,26 +1,22 @@
 @import '../../styles.scss';
 
 .home-wrapper {
-    height: 100vh;
+    @include dFlex(column, center, center);
     width: 100vw;
+    height: 100vh;
     background-color: $black;
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-.home-content {
-    @include dFlex(column, flex-start, flex-start);
 
     >.preview-section {
-        height: 55vh;
         width: 100%;
-        @include dFlex(row, flex-start, flex-start);
+        @include dFlex(row, center, center);
         position: relative;
     }
 
     >.category-section {
-        height: 45vh;
         width: 100%;
+        max-width: 1440px;
         background-color: $black;
         @include dFlex(column, flex-start, center);
         z-index: 2;
@@ -30,6 +26,7 @@
 // todo: currently placeholder image embedd player here
 .video-player {
     object-fit: cover;
+
 
     // todo: currently placeholder image embedd player here
     img {
@@ -41,9 +38,9 @@
 .video-description {
     @include dFlex(column, flex-start, flex-start);
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 10%;
-    width: 25%;
+    width: 50%;
     height: 100%;
     gap: 16px;
     color: $white;
@@ -83,4 +80,10 @@
 
 .category-container:first-child {
     margin-top: -80px;
+}
+
+.home-footer {
+    width: 100%;
+    max-width: 1440px;
+    @include dFlex(row, flex-end, center);
 }
