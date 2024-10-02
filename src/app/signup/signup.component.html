@@ -21,7 +21,7 @@
             </div>
             <div class="input-container">
                 <input [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Enter a Password"
-                    formControlName="password"><img src="assets/img/icons/password_visibility.svg" alt="eye"
+                    formControlName="password"><img src="assets/img/icons/password_visibility.png" alt="eye"
                     (click)="togglePasswordVisibility()">
                 @if (signupForm.controls['password'].touched && signupForm.controls['password'].invalid) {
                 <div class="error-message">
@@ -37,7 +37,7 @@
             </div>
             <div class="input-container">
                 <input [type]="isConfirmPasswordVisible ? 'text' : 'password'" placeholder="Confirm Password"
-                    formControlName="confirmPassword"><img src="assets/img/icons/password_visibility.svg" alt="eye"
+                    formControlName="confirmPassword"><img src="assets/img/icons/password_visibility.png" alt="eye"
                     (click)="toggleConfirmPasswordVisibility()">
                 @if (signupForm.controls['password'].touched && signupForm.controls['confirmPassword'].invalid) {
                 <div class="error-message">
