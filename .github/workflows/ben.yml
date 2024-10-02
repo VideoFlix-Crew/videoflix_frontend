@@ -1,0 +1,38 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "ben" ]
+
+jobs:
+  build:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [21.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install and build
+      run: |
+        npm i
+        npm run build --if-present
+    # - name: Run tests
+    #   run: npm run test -- --watch=false --browsers=ChromeHeadless
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.1
+      with:
+        server: ${{secrets.BENHOST}}
+        username: ${{secrets.BENUSERNAME}}
+        password: ${{secrets.BENPASSWORD}}
+        protocol: ftps
+        server-dir: videoflix.benjamin-tietz.com/
+        local-dir: ./dist/videoflix_frontend/browser/
