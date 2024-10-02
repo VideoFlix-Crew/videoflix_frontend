@@ -86,8 +86,6 @@ input {
     cursor: pointer;
 }
 
-
-
 input::placeholder {
     @include DMSans(400, 18px, 23.44px, $main-blue-dark);
 }
@@ -119,8 +117,6 @@ p {
     input {
         width: 310px;
     }
-
-
 
     input::placeholder {
         @include DMSans(400, 16px, 20.83px, $main-blue-dark);
