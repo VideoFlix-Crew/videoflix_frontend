@@ -2,10 +2,15 @@
     <div class="header">
         <div class="logo-header" [routerLink]="['/']">
             <app-small-logo></app-small-logo>
-            @if (showBigLogo) {
+            @if (this.communicationService.showBigLogo &&
+            !this.communicationService.isMobileViewActive) {
             <app-logo></app-logo>
             }
         </div>
+        @if (!this.communicationService.isLoggedIn) {
         <button [routerLink]="['/login']">Login</button>
+        } @else {
+        <button (click)="handleLogout()"><img src="assets/img/icons/logout_btn.svg" alt="logout_btn">Logout</button>
+        }
     </div>
 </header>

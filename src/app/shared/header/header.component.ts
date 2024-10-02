@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import { SmallLogoComponent } from '../small-logo/small-logo.component';
 import { Router, RouterLink } from '@angular/router';
+import { CommunicationService } from '../../services/communication.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,16 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  showBigLogo: boolean = true;
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public communicationService: CommunicationService
+  ) {
     if (this.router.url === '/home') {
-      this.showBigLogo = false;
+      this.communicationService.showBigLogo = false;
     }
+  }
+
+  handleLogout() {
+    this.communicationService.isLoggedIn = false;
   }
 }

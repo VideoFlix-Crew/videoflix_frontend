@@ -7,20 +7,28 @@
     @include dFlex(row, center, center);
     width: 100%;
     height: 108px;
-    .header{
+
+    .header {
         width: 100%;
         color: white;
         max-width: 1440px;
         @include dFlex(row, space-between, center);
-        padding: 0 96px;
+        padding: 10px 96px;
     }
 }
 
-.logo-header{
+.logo-header {
     @include dFlex(row, center, center);
     cursor: pointer;
 }
 
-button{
-    @include buttonBlue(99px, 48px, 10px);
+button {
+    @include dFlex(row, center, center);
+    @include buttonBlue(unset, 48px, 10px);
+}
+
+@media screen and (max-width: $responsive-breakpoint) {
+    .header {
+        padding: 10px 16px !important;
+    }
 }

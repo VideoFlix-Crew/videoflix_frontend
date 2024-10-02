@@ -7,7 +7,6 @@
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 1440px;
     height: 108px;
     gap: 32px;
     z-index: 2;
@@ -25,5 +24,6 @@
 
 .footer-right-align {
     @include dFlex(row, flex-end, center);
-    padding-right: 96px;
+    padding: 0 96px;
+    position: unset;
 }
